@@ -6,7 +6,7 @@ import org.apache.spark.sql.functions.{col, concat, concat_ws, count}
 import org.apache.spark.sql.types.{DataType, DataTypes, StringType}
 
 object Exercise3 {
-  def doExercise3()(implicit sparksession:SparkSession): Unit ={
+  def doExercise3()(implicit sparkSession:SparkSession): Unit ={
     val customers = Customers.getCustomersTabDelimited()
       .withColumnRenamed("_c0","customer_id")
       .withColumnRenamed("_c1","customer_fname")

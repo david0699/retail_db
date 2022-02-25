@@ -7,9 +7,9 @@ import org.apache.spark.sql.types.DataTypes
 import sun.invoke.util.ValueConversions.cast
 
 object Exercise2 {
-  def doExercise2()(implicit sparksession:SparkSession): Unit ={
+  def doExercise2()(implicit sparkSession:SparkSession): Unit ={
 
-    val categories = Categories.getCategories()
+    val categories = Categories.getCategoriesWithHeader()
       .withColumn("category_id", col("category_id").cast(DataTypes.IntegerType))
 
     val categories2 = categories
