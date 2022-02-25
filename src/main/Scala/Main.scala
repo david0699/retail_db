@@ -1,6 +1,6 @@
 import DataFrames.{Categories, Customers, Products}
 import org.apache.spark.sql.SparkSession
-import Exercices.{Exercise2, Exercise3, Exercise4}
+import Exercices.{Exercise1, Exercise2, Exercise3, Exercise4}
 
 object Main extends App {
   implicit val sparkSession: SparkSession = Spark.getSparkSession
@@ -8,12 +8,14 @@ object Main extends App {
 
   sparkSession.sparkContext.setLogLevel("ERROR")
 
-
+  Exercise1.doExercise1()
+  /*
   Exercise2.doExercise2()
 
   Exercise3.doExercise3()
 
   Exercise4.doExercise4()
+   */
 
 
 

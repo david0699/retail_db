@@ -8,7 +8,7 @@ object Customers {
     sparksession
       .read
       .option("header", "true")
-      .csv("src/main/resources/retail_db/customers/part-m-00000 - Copy")
+      .csv("src/main/resources/retail_db/customers/")
   }
 
   def getCustomersTabDelimited()(implicit sparksession:SparkSession): DataFrame = {
@@ -16,7 +16,7 @@ object Customers {
       .read
       .option("header", "false")
       .option("sep","\t")
-      .csv("src/main/resources/retail_db/customers-tab-delimited/part-m-00000")
+      .csv("src/main/resources/retail_db/customers-tab-delimited/")
   }
 
 
