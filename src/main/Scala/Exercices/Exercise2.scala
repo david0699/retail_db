@@ -4,7 +4,6 @@ import DataFrames.Categories
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions.{col, desc}
 import org.apache.spark.sql.types.DataTypes
-import sun.invoke.util.ValueConversions.cast
 
 object Exercise2 {
   def doExercise2()(implicit sparkSession:SparkSession): Unit ={

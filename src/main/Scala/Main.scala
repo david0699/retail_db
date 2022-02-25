@@ -8,20 +8,10 @@ object Main extends App {
 
   sparkSession.sparkContext.setLogLevel("ERROR")
 
-  /*
-  val customers = Customers.getCustomersTabDelimited()
-  customers.show()
-  */
 
-  /*
-  val products = Products.getProductsAvro()
-  products.show()
-  */
+  Exercise2.doExercise2()
 
-
-  //Exercise2.doExercise2()
-
-  //Exercise3.doExercise3()
+  Exercise3.doExercise3()
 
   Exercise4.doExercise4()
 
