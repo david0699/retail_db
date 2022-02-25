@@ -6,7 +6,7 @@ import org.apache.spark.sql.functions.{col, desc}
 import org.apache.spark.sql.types.{DataTypes, IntegerType}
 
 object Exercise2 {
-  def doExercise2()(implicit sparkSession:SparkSession): Unit ={
+  def doExercise2()(implicit sparkSession:SparkSession): Unit = {
 
     val categories = Categories.getCategoriesWithHeader()
       .withColumn("category_id", col("category_id").cast(DataTypes.IntegerType))

@@ -6,7 +6,7 @@ import org.apache.spark.sql.functions.{col,from_unixtime, month, to_date, year}
 import org.apache.spark.sql.types.{IntegerType, StringType}
 
 object Exercise5 {
- def doExercise5()(implicit sparkSession: SparkSession): Unit ={
+ def doExercise5()(implicit sparkSession: SparkSession): Unit = {
    val orders = Orders.getOrdersParquet()
      .select(col("order_id").cast(IntegerType)
        ,to_date(from_unixtime(col("order_date")/1000,"yyyy-mm-dd hh:mm:ss"),"yyyy-mm-dd hh:mm:ss").as("order_date")

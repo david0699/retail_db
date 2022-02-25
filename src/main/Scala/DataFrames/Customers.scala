@@ -19,5 +19,11 @@ object Customers {
       .csv("src/main/resources/retail_db/customers-tab-delimited/")
   }
 
+  def getCustomersAvro()(implicit sparksession:SparkSession): DataFrame = {
+    sparksession.read
+      .format("avro")
+      .load("src/main/resources/retail_db/customers-avro/")
+  }
+
 
 }
