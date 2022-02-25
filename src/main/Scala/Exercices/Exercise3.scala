@@ -2,8 +2,8 @@ package Exercices
 
 import org.apache.spark.sql.SparkSession
 import DataFrames.Customers
-import org.apache.spark.sql.functions.col
-import org.apache.spark.sql.types.{DataType, DataTypes}
+import org.apache.spark.sql.functions.{col, concat, concat_ws, count}
+import org.apache.spark.sql.types.{DataType, DataTypes, StringType}
 
 object Exercise3 {
   def doExercise3()(implicit sparksession:SparkSession): Unit ={
@@ -19,6 +19,20 @@ object Exercise3 {
       .withColumnRenamed("_c8","customer_zipcode")
       .withColumn("customer_id",col("customer_id").cast(DataTypes.IntegerType))
 
-    customers.printSchema()
+    val countCustomersState = customers
+      .filter("customer_fname like 'a%' or customer_fname like 'A%'")
+      .groupBy("customer_state")
+      .count()
+      .filter("count > 50")
+      .select(concat_ws(",",col("customer_state"),col("count")).cast(StringType).as("Value"))
+
+
+    countCustomersState.write
+      .mode("overwrite")
+      .option("header","true")
+      .format("parquet")
+      .option("compression","gzip")
+      .save("src/main/resources/exercises/q3")
+
   }
 }

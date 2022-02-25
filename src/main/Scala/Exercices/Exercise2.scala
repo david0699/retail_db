@@ -17,8 +17,9 @@ object Exercise2 {
       .sort(desc("category_id"))
 
     categories2.write
+      .mode("overwrite")
       .option("header","true")
       .option("sep",":")
-      .csv("src/main/resources/retail_db/categories-header/prueba1.csv")
+      .csv("src/main/resources/exercises/q2")
   }
 }

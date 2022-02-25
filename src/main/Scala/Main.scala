@@ -19,9 +19,9 @@ object Main extends App {
   */
 
 
-  //val exercise2 = Exercise2.doExercise2()
+  Exercise2.doExercise2()
 
-  val exercise3 = Exercise3.doExercise3()
+  Exercise3.doExercise3()
 
 
 
