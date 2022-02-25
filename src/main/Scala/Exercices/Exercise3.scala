@@ -20,10 +20,10 @@ object Exercise3 {
       .withColumn("customer_id",col("customer_id").cast(DataTypes.IntegerType))
 
     val countCustomersState = customers
-      .filter("customer_fname like 'a%' or customer_fname like 'A%'")
+      .filter(col("customer_fname").like("a%").like("A%"))
       .groupBy("customer_state")
       .count()
-      .filter("count > 50")
+      .filter(col("count") > 50)
       .select(concat_ws(",",col("customer_state"),col("count")).cast(StringType).as("Value"))
 
 

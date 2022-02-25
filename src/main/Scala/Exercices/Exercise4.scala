@@ -15,10 +15,11 @@ object Exercise4 {
       .withColumn("category_depart_id",col("category_depart_id").cast(DataTypes.IntegerType))
 
     val filterCategories = categories
-      .filter("category_name like 'Soccer'")
+      .filter(col("category_name").like("Soccer"))
       .select(concat_ws("|",col("category_id"),col("category_depart_id"),col("category_name")).cast(DataTypes.StringType).as("Value"))
 
     filterCategories.write
+      .mode("overwrite")
       .text("src/main/resources/exercises/q4")
 
 
