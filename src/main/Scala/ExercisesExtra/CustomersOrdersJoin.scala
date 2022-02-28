@@ -20,11 +20,14 @@ object CustomersOrdersJoin {
     orders.printSchema()
     orders.show()
 
-    customers.join(orders,customers("customer_id") === orders("_c2"),"left")
+    val customerOrders = customers.join(orders,customers("customer_id") === orders("_c2"),"left")
       .select(col("customer_id"),col("customer_name"))
       .groupBy("customer_id")
       .count()
       .orderBy(col("customer_id"))
-      .show()
+
+
+    customers.join(customerOrders,customers("customer_id") === customerOrders("customer_id"),"inner")
+      .select(customers("customer_id"),col("customer_name"),col("count").as("orders_count")).dropDuplicates("customer_id").orderBy(col("customer_id")).show()
   }
 }
