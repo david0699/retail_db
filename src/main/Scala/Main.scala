@@ -1,7 +1,7 @@
 
 import org.apache.spark.sql.SparkSession
 import Exercices.{Exercise1, Exercise2, Exercise3, Exercise4, Exercise5, Exercise6}
-import ExercisesExtra.CustomersOrdersJoin
+import ExercisesExtra.{CustomersOrdersJoin, ProductsCategoriesJoin}
 
 
 object Main extends App {
@@ -23,5 +23,7 @@ object Main extends App {
   //Exercise6.doExercise6()
 
   //CustomersOrdersJoin.countOrdersPerCustomer()
+
+  //ProductsCategoriesJoin.getCategoryForProduct()
 
 }
