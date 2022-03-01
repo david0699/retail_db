@@ -2,7 +2,7 @@ package ExercisesExtra
 
 import org.apache.spark.sql.SparkSession
 import DataFrames.{Customers, Orders}
-import org.apache.spark.sql.functions.{col, concat_ws}
+import org.apache.spark.sql.functions.{broadcast, col, concat_ws}
 import org.apache.spark.sql.types.IntegerType
 
 object CustomersOrdersJoin {
@@ -16,12 +16,13 @@ object CustomersOrdersJoin {
 
     val orders = Orders.getOrders()
 
-    val customerOrders = customers.join(orders,customers("customer_id") === orders("_c2"),"left")
-      .select(col("customer_id"),col("customer_name"))
+    val customerOrders = orders.join(broadcast(customers),orders("_c2") <=> customers("customer_id"),"left")
       .groupBy("customer_id")
       .count()
 
-    customers.join(customerOrders,customers("customer_id") === customerOrders("customer_id"),"inner")
+    customerOrders.printSchema()
+
+    customers.join(broadcast(customerOrders),customers("customer_id") <=> customerOrders("customer_id"),"inner")
       .select(customers("customer_id")
         ,col("customer_name")
         ,col("count").as("orders_count"))
