@@ -2,7 +2,7 @@
 import org.apache.spark.sql.SparkSession
 import Exercices.{Exercise1, Exercise2, Exercise3, Exercise4, Exercise5, Exercise6}
 import ExercisesExtra.{CustomersOrdersJoin, ProductsCategoriesEditProducts, ProductsCategoriesJoin}
-
+import ExercisesJoin.{Exercise1_J}
 
 object Main extends App {
   implicit val sparkSession: SparkSession = Spark.getSparkSession
@@ -26,6 +26,8 @@ object Main extends App {
 
   //ProductsCategoriesJoin.getCategoryForProduct()
 
-  ProductsCategoriesEditProducts.getEditProducts()
+  //ProductsCategoriesEditProducts.getEditProducts()
+
+  Exercise1_J.doExercise1_J()
 
 }
