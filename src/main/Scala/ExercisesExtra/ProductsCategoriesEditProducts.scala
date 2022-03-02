@@ -28,8 +28,6 @@ object ProductsCategoriesEditProducts {
       .otherwise(round(col("product_price")*100)/100))
       .drop(col("category_name"))
 
-    productsCategoriesJoin.show()
-
     productsCategoriesJoin.coalesce(1)
       .write
       .mode("overwrite")
