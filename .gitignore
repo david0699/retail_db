@@ -1,0 +1,4 @@
+*.class
+*.log
+.idea
+src/main/resources/[Ee]xercise.
