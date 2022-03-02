@@ -23,6 +23,7 @@ object ProductsCategoriesEditProducts {
         when(col("product_price").between(50,80)
         && col("category_name").equalTo("World Cup Shop")
         ,col("product_price")*0.8))
+      .drop(col("category_name"))
 
     productsCategoriesJoin.show()
 
