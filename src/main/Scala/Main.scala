@@ -40,7 +40,7 @@ object Main extends App {
 
   //ProductsCategoriesJoin.getCategoryForProduct()
 
-  ProductsCategoriesEditProducts.getEditProducts()
+  //ProductsCategoriesEditProducts.getEditProducts()
 
 
 
