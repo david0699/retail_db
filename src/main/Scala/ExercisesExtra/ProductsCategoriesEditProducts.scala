@@ -2,9 +2,9 @@ package ExercisesExtra
 
 import DataFrames.{Categories, Products}
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions.{col, row_number, when}
-import org.apache.spark.sql.types.DoubleType
-import scala.math.round
+import org.apache.spark.sql.functions.{col, when,round}
+
+
 
 object ProductsCategoriesEditProducts {
   def getEditProducts()(implicit sparkSession: SparkSession):Unit={
@@ -25,7 +25,7 @@ object ProductsCategoriesEditProducts {
         when(col("product_price").between(50,80)
         && col("category_name").equalTo("World Cup Shop")
         ,col("product_price")*0.8)
-      .otherwise(col("product_price")))
+      .otherwise(round(col("product_price")*100)/100))
       .drop(col("category_name"))
 
     productsCategoriesJoin.show()
