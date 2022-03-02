@@ -10,6 +10,10 @@ object Main extends App {
 
   sparkSession.sparkContext.setLogLevel("ERROR")
 
+  /*
+  Exercises
+   */
+
   //Exercise1.doExercise1()
 
   //Exercise2.doExercise2()
@@ -22,12 +26,22 @@ object Main extends App {
 
   //Exercise6.doExercise6()
 
+  /*
+  Exercises Join
+   */
+
+  //Exercise1_J.doExercise1_J()
+
+  /*
+  Exercises Extra
+   */
+
   //CustomersOrdersJoin.countOrdersPerCustomer()
 
   //ProductsCategoriesJoin.getCategoryForProduct()
 
-  //ProductsCategoriesEditProducts.getEditProducts()
+  ProductsCategoriesEditProducts.getEditProducts()
 
-  Exercise1_J.doExercise1_J()
+
 
 }
