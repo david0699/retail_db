@@ -14,31 +14,31 @@ object Main extends App {
   Exercises
    */
 
-  //Exercise1.doExercise1()
+  Exercise1.doExercise1()
 
-  //Exercise2.doExercise2()
+  Exercise2.doExercise2()
 
-  //Exercise3.doExercise3()
+  Exercise3.doExercise3()
 
-  //Exercise4.doExercise4()
+  Exercise4.doExercise4()
 
-  //Exercise5.doExercise5()
+  Exercise5.doExercise5()
 
-  //Exercise6.doExercise6()
+  Exercise6.doExercise6()
 
   /*
   Exercises Join
    */
 
-  //Exercise1_J.doExercise1_J()
+  Exercise1_J.doExercise1_J()
 
   /*
   Exercises Extra
    */
 
-  //CustomersOrdersJoin.countOrdersPerCustomer()
+  CustomersOrdersJoin.countOrdersPerCustomer()
 
-  //ProductsCategoriesJoin.getCategoryForProduct()
+  ProductsCategoriesJoin.getCategoryForProduct()
 
   ProductsCategoriesEditProducts.getEditProducts()
 

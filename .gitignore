@@ -1,6 +1,6 @@
 *.class
 *.log
-.idea
+/.idea
 /src/main/resources/exercises
 src/main/resources/exercisesExtra
 src/main/resources/exercisesJoin
