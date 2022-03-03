@@ -1,4 +1,6 @@
 *.class
 *.log
 .idea
-src/main/resources/[Ee]xercise.
+/src/main/resources/exercises
+src/main/resources/exercisesExtra
+src/main/resources/exercisesJoin
